@@ -8,35 +8,62 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
+use Symfony\Component\Serializer\Attribute\Groups;
 
-#[ApiResource]
+use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\Post;
+use ApiPlatform\Metadata\Patch;
+use ApiPlatform\Metadata\Delete;
+
+#[ApiResource(
+    operations: [
+        new GetCollection(security: "is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to get animals'),
+        new Post(security: "is_granted('ROLE_ASSISTANT')", securityMessage: 'You are not allowed to get this animal'),
+        new Get(security: "is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to get this animal'),
+        new Patch(security: "is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to edit this animal'),
+        new Delete(security: "is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to delete this animal'),
+    ],
+    normalizationContext: ['groups' => ['read']],
+    denormalizationContext: ['groups' => ['write']],
+    forceEager: false
+
+)]
 #[ORM\Entity(repositoryClass: AnimalRepository::class)]
 class Animal
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(groups: 'read')]
+
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['read', 'write'])]
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $spieces = null;
+    #[Groups(['read', 'write'])]
+    private ?string $species = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Groups(['read', 'write'])]
     private ?\DateTimeInterface $birthdate = null;
 
     #[ORM\OneToOne(inversedBy: 'animal', cascade: ['persist', 'remove'])]
+    #[Groups(['read', 'write'])]
     private ?Media $picture = null;
 
     #[ORM\ManyToOne(inversedBy: 'animals')]
+    #[Groups(['read', 'write'])]
     private ?User $owner = null;
 
     /**
      * @var Collection<int, Apointement>
      */
     #[ORM\OneToMany(targetEntity: Apointement::class, mappedBy: 'animal')]
+    #[Groups(['read', 'write'])]
     private Collection $apointements;
 
     public function __construct()
@@ -61,17 +88,18 @@ class Animal
         return $this;
     }
 
-    public function getSpieces(): ?string
+    public function getSpecies(): ?string
     {
-        return $this->spieces;
+        return $this->species;
     }
 
-    public function setSpieces(string $spieces): static
+    public function setSpecies(string $species): static
     {
-        $this->spieces = $spieces;
+        $this->species = $species;
 
         return $this;
     }
+
 
     public function getBirthdate(): ?\DateTimeInterface
     {

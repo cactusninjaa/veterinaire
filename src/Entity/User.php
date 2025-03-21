@@ -8,6 +8,8 @@ use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Delete;
 use App\State\UserPasswordHasherProcessor;
+use App\State\UserRoleSecurityProcessor;
+
 
 use ApiPlatform\Metadata\ApiResource;
 
@@ -19,19 +21,19 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Serializer\Attribute\Groups;
 
-
-
 #[ApiResource(
     operations: [
-        new GetCollection(),
-        new Post(processor: UserPasswordHasherProcessor::class),
-        new Get(),
-        new Patch(processor: UserPasswordHasherProcessor::class),
-        new Delete(),
+        new GetCollection(security: "is_granted('ROLE_DIRECTOR')", securityMessage: 'You are not allowed to get users'),
+        new Post(processor: UserRoleSecurityProcessor::class),
+        new Get(security: "is_granted('ROLE_DIRECTOR') or object == user", securityMessage: 'You are not allowed to get this user'),
+        new Patch(processor: UserRoleSecurityProcessor::class, security: "is_granted('ROLE_DIRECTOR') or object == user", securityMessage: 'You are not allowed to edit this user'),
+        new Delete(security: "is_granted('ROLE_DIRECTOR') or object == user", securityMessage: 'You are not allowed to delete this user'),
     ],
     normalizationContext: ['groups' => ['read']],
-    denormalizationContext: ['groups' => ['write']]
+    denormalizationContext: ['groups' => ['write']],    
+    forceEager: false
 )]
+
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
@@ -63,7 +65,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     #[Groups('read')]
     private ?string $password = null;
- 
+
     #[Groups(groups: 'write')]
     private ?string $plainPassword = null;
 
@@ -107,7 +109,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getUserIdentifier(): string
     {
-        return (string) $this->id;
+        return (string) $this->email;
     }
 
     public function getEmail(): ?string
@@ -165,11 +167,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         return $this->plainPassword;
     }
- 
+
     public function setPlainPassword(string $plainPassword): static
     {
         $this->plainPassword = $plainPassword;
- 
+
         return $this;
     }
 

@@ -8,8 +8,22 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\Post;
+use ApiPlatform\Metadata\Patch;
+use ApiPlatform\Metadata\Delete;
 
-#[ApiResource]
+#[ApiResource(
+    operations: [
+        new GetCollection(security: "is_granted('ROLE_VETERINAIRE')", securityMessage: 'You are not allowed to get treatments'),
+        new Post(security: "is_granted('ROLE_VETERINAIRE')", securityMessage: 'You are not allowed to create this treatment'),
+        new Get(security: "is_granted('ROLE_VETERINAIRE')", securityMessage: 'You are not allowed to get this treatment'),
+        new Patch(security: "is_granted('ROLE_VETERINAIRE')", securityMessage: 'You are not allowed to edit this treatment'),
+        new Delete(security: "is_granted('ROLE_VETERINAIRE')", securityMessage: 'You are not allowed to delete this treatment'),
+    ],
+    forceEager: false
+)]
 #[ORM\Entity(repositoryClass: TreatmentRepository::class)]
 class Treatment
 {
