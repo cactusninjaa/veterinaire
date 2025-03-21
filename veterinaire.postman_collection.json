@@ -1,0 +1,1290 @@
+{
+	"info": {
+		"_postman_id": "f1b808e6-803b-4508-945e-ae07f72bc40a",
+		"name": "veterinaire",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33050453"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI1NTY0MDAsImV4cCI6MTc0MjU2MDAwMCwicm9sZXMiOlsiUk9MRV9ESVJFQ1RPUiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImRpcmVjdG9yQGdtYWlsLmNvbSJ9.F3FbBS00-Qz0HtWO_CzRGJSLtaIwIphogwTzcusz2N1UCRqGX1EswCLGgC1QsO_71YHULIx74nz4YsJUWb-FQQCziEtAs7Q8p5a6U61BAWXlPjye9MGDaJX4oKUwu5I3XJwOxKPyo0gs14oeuyp_V5I9QyXml4HVnk9VB6T_5Wx6rAZJEVy-E-Ww1I9elUaRtD_ANbmcdSvs7Hb8KCuz0UxFETK0Cr-EMWxKAj91OzYJ2dEiUIKRC2akpAmAsSqXfpIE0BTTHeW98F2K70ANSk_4jgoz_208I7oI8ZBWXIG3gzj5li4fWJ9drizGNPGPRu4ApCT5WordN-m31OgFew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}users",
+							"host": [
+								"{{BASE_URL}}users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI1NTYyODQsImV4cCI6MTc0MjU1OTg4NCwicm9sZXMiOlsiUk9MRV9BU1NJU1RBTlQiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJhc3Npc3RhbnRAZ21haWwuY29tIn0.U0oNKXq3cDol1TrG-S8sSbK0MnsRhdfm_P8vSxaOg4nklYXvdZHycE7HBcszUKlDPjV04twrTNOXjYc5ISBIGiH1G3AhqsHY2E1d3Rc4VW2u5iwgiWzh12KBkJY8kIN2ayykucPgYSX1fz4Is70aKJVpkfGoI3vSpPkVN3iNFlOTO3t6bnXUDSKQ06xYztA2klDwTeoiegy5Bd3YHZeVsIH0iGpJBz4dEHHT0AvZbehPGhe4wn4NLZMLTz9fQmCwXxRBWJghc9xXs_uziapTNKS-JzPO-ht1wZNuR19GWjUnvsiJtoqyUGfv8G9LsBD5TL4dUO1DPHUn8OCzFWKvlA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}users/24",
+							"host": [
+								"{{BASE_URL}}users"
+							],
+							"path": [
+								"24"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"plainPassword\": \"123\",\n  \"firstName\": \"user\",\n  \"lastName\": \"user\",\n  \"email\" : \"tesd@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}users",
+							"host": [
+								"{{BASE_URL}}users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}users/15",
+							"host": [
+								"{{BASE_URL}}users"
+							],
+							"path": [
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/merge-patch+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : \"Anthony\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}users/1",
+							"host": [
+								"{{BASE_URL}}users"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Media",
+			"item": [
+				{
+					"name": "Medias",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}media",
+							"host": [
+								"{{BASE_URL}}media"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Media",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/media",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"media"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Medias",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/thomassauvage/SitesInternet/ia/images/singe1.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/media",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"media"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Medias",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}media/1",
+							"host": [
+								"{{BASE_URL}}media"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Medias",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}media/1",
+							"host": [
+								"{{BASE_URL}}media"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Animal",
+			"item": [
+				{
+					"name": "Animals",
+					"protocolProfileBehavior": {
+						"strictSSL": false
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI1NDU4MDcsImV4cCI6MTc0MjU0OTQwNywicm9sZXMiOlsiUk9MRV9WRVRFUklOQUlSRSIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6IjE0In0.ZWerKrGEoiH5M_tEL0AiPpl9OmtDjMKijL0H7aj0vnNjsp0zXu_1DFa6lhMxiRd_tzZS4vCjCAuGkqHrlHaDoY2RgzMDmkv_bwF6A26zPPdfDFbPRdBrFUFkTQnicLsh6xbjgI-lxTm18s6RuZSO9hSmVly3XdAqSERh7kSa-DpTZjsKEqsr-Jv0vXclAgMSjStRkjusMXKUlDpCbOaV5DLi4UPy3L0uNcT08i7x_wV64TcOnVwdTGu7nvThzFmwCjJnbuxcr613rGvEiDDZwkyJouJlANwPYvjMhXt47KsYlNVs2_k7V1i0TrTF2AW-lc0wS86FjEuh_io_A1RY2Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}animals",
+							"host": [
+								"{{BASE_URL}}animals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Animal",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}animals/1",
+							"host": [
+								"{{BASE_URL}}animals"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Animals",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"alice\",\n  \"species\": \"cat\",\n  \"birthdate\": \"2025-03-20T14:53:28.937Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}animals",
+							"host": [
+								"{{BASE_URL}}animals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Animals",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"alice\",\n  \"species\": \"cat\",\n  \"birthdate\": \"2025-03-20T14:53:28.937Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}animals/1",
+							"host": [
+								"{{BASE_URL}}animals"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Animals",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"alice\",\n  \"species\": \"cat\",\n  \"birthdate\": \"2025-03-20T14:53:28.937Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}animals/1",
+							"host": [
+								"{{BASE_URL}}animals"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Treatment",
+			"item": [
+				{
+					"name": "Treatments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/treatments",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"treatments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Treatment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/treatments/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"treatments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Treatments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"ibuprophène\",\n    \"description\": \"mal de bide\",\n    \"price\": \"12\",\n    \"duration\": 102\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/treatments",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"treatments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Treatments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"dolipranne\",\n    \"description\": \"mal de crane\",\n    \"price\": \"10\",\n    \"duration\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/treatments/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"treatments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Treatments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"dolipranne\",\n    \"description\": \"mal de crane\",\n    \"price\": \"10\",\n    \"duration\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/treatments/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"treatments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Apointement",
+			"item": [
+				{
+					"name": "Apointements",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI1NjIxNTYsImV4cCI6MTc0MjU2NTc1Niwicm9sZXMiOlsiUk9MRV9WRVRFUklOQUlSRSIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6InZldGVyaW5haXJlQGdtYWlsLmNvbSJ9.ZeABYpojLqgUjz_TrQ6JEh_BCCHR9Nby6Fu1BNJCB_odbiBu9_-nJULUovvxi7kyJyvCCuJSG0mY9bLNplNKpMKS2m-nJb3EPRK8B-03vLXc0MJTgkQ_S5mOTgecqLSt7LTo7_jifjNfP5vdk8xvSCLCX_5-Tmie13vB3RryJ6fAt5bFNtX7U_h2BrewDNmd9jEG-J3A6-lj-ND_7go8PUI_8xnPZtR5ZL-ql30Aq4Q9xsr4Y6xmGEnMKIJFhUkLOJfTmtFmo1oIJOGcacCG8sQB-0RA2rAdQEC9wWg4pzhBUUUVsJuc_x1Ue2VZ0ZRLIfykW_dh7phhQ6HlDbzfNg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/apointements",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"apointements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apointements Today",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI1NjIxNTYsImV4cCI6MTc0MjU2NTc1Niwicm9sZXMiOlsiUk9MRV9WRVRFUklOQUlSRSIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6InZldGVyaW5haXJlQGdtYWlsLmNvbSJ9.ZeABYpojLqgUjz_TrQ6JEh_BCCHR9Nby6Fu1BNJCB_odbiBu9_-nJULUovvxi7kyJyvCCuJSG0mY9bLNplNKpMKS2m-nJb3EPRK8B-03vLXc0MJTgkQ_S5mOTgecqLSt7LTo7_jifjNfP5vdk8xvSCLCX_5-Tmie13vB3RryJ6fAt5bFNtX7U_h2BrewDNmd9jEG-J3A6-lj-ND_7go8PUI_8xnPZtR5ZL-ql30Aq4Q9xsr4Y6xmGEnMKIJFhUkLOJfTmtFmo1oIJOGcacCG8sQB-0RA2rAdQEC9wWg4pzhBUUUVsJuc_x1Ue2VZ0ZRLIfykW_dh7phhQ6HlDbzfNg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"dolipranne\",\n    \"description\": \"mal de crane\",\n    \"price\": \"10\",\n    \"duration\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/apointements?apointementDate[strictly_after]=2025-03-21&apointementDate[strictly_before]=2025-03-22",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"apointements"
+							],
+							"query": [
+								{
+									"key": "apointementDate[strictly_after]",
+									"value": "2025-03-21"
+								},
+								{
+									"key": "apointementDate[strictly_before]",
+									"value": "2025-03-22"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apointements History",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI1NjQ5OTQsImV4cCI6MTc0MjU2ODU5NCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidXNlckBnbWFpbC5jb20ifQ.aazrKjCJY8qWEam-EWy6WGK3EvQAJQn6iVQTbmyc49x3COoh-qdMk3hglAXMK4AVdGDth6CDVMfazi6PV6zyzUYOIwFDMihAJ0Ote28vfEQ6NLsFnNvWI4k297H0hTNHsKQxo2djOPvRr92VJBvgNKTi4aD7yLRuwoPbDgUmLayLxWvybZDjBduxvhUwV_d0JrI-jzPoU2U9JWatwexvWsXAWS1MhzgWs-CajeFR9douE5jDVhZxNRFepjz71GGiH40ZwM1kbVlVejZRCXTz7rNS6lWWcvniyE6vJ0QtX9x60KghEbLmRrLkYbnR9EMpZb3DiAm7ce6e5w_vyygPsQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"dolipranne\",\n    \"description\": \"mal de crane\",\n    \"price\": \"10\",\n    \"duration\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/apointements?apointementDate[strictly_after]=2025-03-21&apointementDate[strictly_before]=2025-03-23",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"apointements"
+							],
+							"query": [
+								{
+									"key": "apointementDate[strictly_after]",
+									"value": "2025-03-21"
+								},
+								{
+									"key": "apointementDate[strictly_before]",
+									"value": "2025-03-23"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apointements Status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI1NjIxNTYsImV4cCI6MTc0MjU2NTc1Niwicm9sZXMiOlsiUk9MRV9WRVRFUklOQUlSRSIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6InZldGVyaW5haXJlQGdtYWlsLmNvbSJ9.ZeABYpojLqgUjz_TrQ6JEh_BCCHR9Nby6Fu1BNJCB_odbiBu9_-nJULUovvxi7kyJyvCCuJSG0mY9bLNplNKpMKS2m-nJb3EPRK8B-03vLXc0MJTgkQ_S5mOTgecqLSt7LTo7_jifjNfP5vdk8xvSCLCX_5-Tmie13vB3RryJ6fAt5bFNtX7U_h2BrewDNmd9jEG-J3A6-lj-ND_7go8PUI_8xnPZtR5ZL-ql30Aq4Q9xsr4Y6xmGEnMKIJFhUkLOJfTmtFmo1oIJOGcacCG8sQB-0RA2rAdQEC9wWg4pzhBUUUVsJuc_x1Ue2VZ0ZRLIfykW_dh7phhQ6HlDbzfNg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"dolipranne\",\n    \"description\": \"mal de crane\",\n    \"price\": \"10\",\n    \"duration\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/apointements?apointementDate[strictly_after]=2025-03-21&apointementDate[strictly_before]=2025-03-22",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"apointements"
+							],
+							"query": [
+								{
+									"key": "apointementDate[strictly_after]",
+									"value": "2025-03-21"
+								},
+								{
+									"key": "apointementDate[strictly_before]",
+									"value": "2025-03-22"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apointements Sort",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI1NjIxNTYsImV4cCI6MTc0MjU2NTc1Niwicm9sZXMiOlsiUk9MRV9WRVRFUklOQUlSRSIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6InZldGVyaW5haXJlQGdtYWlsLmNvbSJ9.ZeABYpojLqgUjz_TrQ6JEh_BCCHR9Nby6Fu1BNJCB_odbiBu9_-nJULUovvxi7kyJyvCCuJSG0mY9bLNplNKpMKS2m-nJb3EPRK8B-03vLXc0MJTgkQ_S5mOTgecqLSt7LTo7_jifjNfP5vdk8xvSCLCX_5-Tmie13vB3RryJ6fAt5bFNtX7U_h2BrewDNmd9jEG-J3A6-lj-ND_7go8PUI_8xnPZtR5ZL-ql30Aq4Q9xsr4Y6xmGEnMKIJFhUkLOJfTmtFmo1oIJOGcacCG8sQB-0RA2rAdQEC9wWg4pzhBUUUVsJuc_x1Ue2VZ0ZRLIfykW_dh7phhQ6HlDbzfNg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"dolipranne\",\n    \"description\": \"mal de crane\",\n    \"price\": \"10\",\n    \"duration\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/apointements?apointementDate[strictly_after]=2025-03-21&apointementDate[strictly_before]=2025-03-22",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"apointements"
+							],
+							"query": [
+								{
+									"key": "apointementDate[strictly_after]",
+									"value": "2025-03-21"
+								},
+								{
+									"key": "apointementDate[strictly_before]",
+									"value": "2025-03-22"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apointement",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI1NjIxNTYsImV4cCI6MTc0MjU2NTc1Niwicm9sZXMiOlsiUk9MRV9WRVRFUklOQUlSRSIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6InZldGVyaW5haXJlQGdtYWlsLmNvbSJ9.ZeABYpojLqgUjz_TrQ6JEh_BCCHR9Nby6Fu1BNJCB_odbiBu9_-nJULUovvxi7kyJyvCCuJSG0mY9bLNplNKpMKS2m-nJb3EPRK8B-03vLXc0MJTgkQ_S5mOTgecqLSt7LTo7_jifjNfP5vdk8xvSCLCX_5-Tmie13vB3RryJ6fAt5bFNtX7U_h2BrewDNmd9jEG-J3A6-lj-ND_7go8PUI_8xnPZtR5ZL-ql30Aq4Q9xsr4Y6xmGEnMKIJFhUkLOJfTmtFmo1oIJOGcacCG8sQB-0RA2rAdQEC9wWg4pzhBUUUVsJuc_x1Ue2VZ0ZRLIfykW_dh7phhQ6HlDbzfNg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/apointements/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"apointements",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apointements",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI1NjIxNTYsImV4cCI6MTc0MjU2NTc1Niwicm9sZXMiOlsiUk9MRV9WRVRFUklOQUlSRSIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6InZldGVyaW5haXJlQGdtYWlsLmNvbSJ9.ZeABYpojLqgUjz_TrQ6JEh_BCCHR9Nby6Fu1BNJCB_odbiBu9_-nJULUovvxi7kyJyvCCuJSG0mY9bLNplNKpMKS2m-nJb3EPRK8B-03vLXc0MJTgkQ_S5mOTgecqLSt7LTo7_jifjNfP5vdk8xvSCLCX_5-Tmie13vB3RryJ6fAt5bFNtX7U_h2BrewDNmd9jEG-J3A6-lj-ND_7go8PUI_8xnPZtR5ZL-ql30Aq4Q9xsr4Y6xmGEnMKIJFhUkLOJfTmtFmo1oIJOGcacCG8sQB-0RA2rAdQEC9wWg4pzhBUUUVsJuc_x1Ue2VZ0ZRLIfykW_dh7phhQ6HlDbzfNg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"apointementDate\": \"2025-03-21T15:46:31.750Z\",\n    \"reason\": \"mal au cheveux\",\n    \"animal\": \"/api/animals/1\",\n    \"assistant\": \"/api/users/13\",\n    \"treatment\": [\"/api/treatments/1\", \"/api/treatments/2\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/apointements",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"apointements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apointements",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI1NjQ3NTQsImV4cCI6MTc0MjU2ODM1NCwicm9sZXMiOlsiUk9MRV9WRVRFUklOQUlSRSIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6InZldGVyaW5haXJlQGdtYWlsLmNvbSJ9.OpLGcEn2QX1UMw5Z-rGOBwQ_b7KHTr5HUzMWyoiU68tmBN-pPs4lQMmPQ44yulR0ZYv5AS-vMwqyFpm6MAWxok-FA8LHSLhrVvdKVq3vvFDsPdCacyDXQXpzWTFW1-hHmeUuX2ZvZxOP_VT4lFmt__4tNmKvy-JrEbJrLO1sJq6hlMQ0A3DjFXxiNW3bkdqX_hZzg72Rm7iLKPKJolziJioSAz1iXJ3OTEoB6aGGo41hn8BkKvKvpcOY8twRLNqpcQaAVXDnxtwqnIUiO0cbmdZsdf5cEfGl0MGvRiMsC9vL-gNqiNXxVB751By3PhU-lBmewc5aZVkBRp4lI7O8PQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/merge-patch+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\" : \"en cours\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/apointements/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"apointements",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apointements Paid",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI1NjQ3NTQsImV4cCI6MTc0MjU2ODM1NCwicm9sZXMiOlsiUk9MRV9WRVRFUklOQUlSRSIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6InZldGVyaW5haXJlQGdtYWlsLmNvbSJ9.OpLGcEn2QX1UMw5Z-rGOBwQ_b7KHTr5HUzMWyoiU68tmBN-pPs4lQMmPQ44yulR0ZYv5AS-vMwqyFpm6MAWxok-FA8LHSLhrVvdKVq3vvFDsPdCacyDXQXpzWTFW1-hHmeUuX2ZvZxOP_VT4lFmt__4tNmKvy-JrEbJrLO1sJq6hlMQ0A3DjFXxiNW3bkdqX_hZzg72Rm7iLKPKJolziJioSAz1iXJ3OTEoB6aGGo41hn8BkKvKvpcOY8twRLNqpcQaAVXDnxtwqnIUiO0cbmdZsdf5cEfGl0MGvRiMsC9vL-gNqiNXxVB751By3PhU-lBmewc5aZVkBRp4lI7O8PQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/merge-patch+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"is_paid\" : \"true\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/apointements/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"apointements",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apointements Change Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI1NjQ3NTQsImV4cCI6MTc0MjU2ODM1NCwicm9sZXMiOlsiUk9MRV9WRVRFUklOQUlSRSIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6InZldGVyaW5haXJlQGdtYWlsLmNvbSJ9.OpLGcEn2QX1UMw5Z-rGOBwQ_b7KHTr5HUzMWyoiU68tmBN-pPs4lQMmPQ44yulR0ZYv5AS-vMwqyFpm6MAWxok-FA8LHSLhrVvdKVq3vvFDsPdCacyDXQXpzWTFW1-hHmeUuX2ZvZxOP_VT4lFmt__4tNmKvy-JrEbJrLO1sJq6hlMQ0A3DjFXxiNW3bkdqX_hZzg72Rm7iLKPKJolziJioSAz1iXJ3OTEoB6aGGo41hn8BkKvKvpcOY8twRLNqpcQaAVXDnxtwqnIUiO0cbmdZsdf5cEfGl0MGvRiMsC9vL-gNqiNXxVB751By3PhU-lBmewc5aZVkBRp4lI7O8PQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/merge-patch+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\" : \"terminé\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/apointements/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"apointements",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apointements",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/apointements/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"apointements",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"user@gmail.com\",\n    \"password\" : \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}auth",
+					"host": [
+						"{{BASE_URL}}auth"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "https://127.0.0.1:8000/api/",
+			"type": "default"
+		}
+	]
+}
