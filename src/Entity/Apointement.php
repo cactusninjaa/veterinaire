@@ -13,6 +13,8 @@ use Symfony\Component\Serializer\Attribute\Groups;
 
 use ApiPlatform\Metadata\ApiFilter;
 use ApiPlatform\Doctrine\Orm\Filter\DateFilter;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
 
 use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Get;
@@ -37,6 +39,8 @@ use Symfony\Component\Serializer\Attribute\MaxDepth;
     forceEager: false
 )]
 #[ApiFilter(DateFilter::class, properties: ['apointementDate'])]
+#[ApiFilter(SearchFilter::class, properties: ['status' => 'partial', 'is_paid' => 'exact'])]
+#[ApiFilter(OrderFilter::class, properties: ['apointementDate'])]
 #[ORM\Entity(repositoryClass: ApointementRepository::class)]
 class Apointement
 {
