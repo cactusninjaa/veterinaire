@@ -172,8 +172,11 @@ class Apointement
 
     public function setAssistant(?User $assistant): static
     {
-        $this->assistant = $assistant;
+        if ($assistant && !in_array('ROLE_ASSISTANT', $assistant->getRoles(), true)) {
+            throw new \InvalidArgumentException("L'utilisateur sélectionné n'a pas le rôle d'assistant.");
+        }
 
+        $this->assistant = $assistant;
         return $this;
     }
 
@@ -184,8 +187,11 @@ class Apointement
 
     public function setVeterinarian(?User $veterinarian): static
     {
+        if ($veterinarian && !in_array('ROLE_VETERINAIRE', $veterinarian->getRoles(), true)) {
+            throw new \InvalidArgumentException("L'utilisateur sélectionné n'a pas le rôle de vétérinaire.");
+        }
+    
         $this->veterinarian = $veterinarian;
-
         return $this;
     }
 
