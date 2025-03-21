@@ -1133,7 +1133,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"is_paid\" : \"true\"\n}",
+							"raw": "{\n    \"is_paid\" : true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
